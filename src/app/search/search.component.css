@@ -1,0 +1,86 @@
+.divbotoes{
+  float:right;
+  width: 250px;
+  margin-top: 1em;
+  margin-right: 75px;
+}
+
+.principal{
+  width: 100%;
+  height: 5em;
+}
+
+.dtinput{
+  margin-left: 0.7em;
+  height: 1.4em;
+  border:1px solid;
+  font-size: 15px;
+  width: 140px;
+}
+
+label{
+  margin-left: 2em;
+  font-size: 15px;
+  color: #000000;
+}
+
+fieldset{
+  width: 75em;
+  margin: auto 5em;
+  height: 10em;
+  border: 1px solid #000000;
+}
+
+select{
+  -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+  -moz-appearance: none; /* Remove estilo padrão do FireFox */
+  appearance: none; /* Remove estilo padrão do FireFox*/
+  background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat;  /* Imagem de fundo (Seta) */
+  background-position: 200px center;  /*Posição da imagem do background*/
+  margin-top: 10px;
+  border-color: #ddd;
+  padding-top:0px;
+}
+
+#docnumber{
+  width: 17em;
+  margin-left: 1em;
+  height: 1.5em;
+  border:1px solid;
+}
+
+#tpmoeda{
+  width: 15em;
+  margin-left: 2em;
+  height: 1.2em;
+  border: 1px solid;
+}
+
+#btsearch , #btclear{
+  width: 7em;
+  margin-left: 1em;
+  border-width: 2px;
+}
+
+#btsearch{
+  background-color: #228B22;
+}
+
+#btclear{
+  background-color:#FF8C00;
+}
+
+::-webkit-input-placeholder {
+   color: #363636;
+   font: 12px verdana, arial, sans-serif;
+}
+
+:-moz-placeholder {
+   color: #363636;
+   font: 12px verdana, arial, sans-serif;
+}
+
+:-ms-input-placeholder {
+   color: #363636;
+   font: 12px verdana, arial, sans-serif;
+}
