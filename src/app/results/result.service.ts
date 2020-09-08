@@ -27,21 +27,10 @@ export class ResultService{
     // Headers
     let options = { headers: headers }
 
-    console.log(`Iniciando a chamada http url: ${SAM_EVALUATION_API}/api/evaluation/v1/resultados`)
-
     return this.httpClient.get<Result[]>(`${SAM_EVALUATION_API}/api/evaluation/v1/resultados`, options)
          .pipe(
            retry(2),
            catchError(this.handleError))
-  }
-
-  authenticate(email: string, senha: string) {
-      return this.httpClient.post(this.API_Login, {email: email, senha: senha})
-                        .pipe(
-                              tap( response => {
-                                    localStorage.setItem('token',response.json());
-                                    localStorage.setItem('user',JSON.json())
-                            )
   }
 
   // Manipulação de erros
