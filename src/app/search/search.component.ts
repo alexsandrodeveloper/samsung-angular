@@ -15,8 +15,8 @@ import { ResultService } from '../results/result.service'
 })
 export class SearchComponent implements OnInit {
 
-  @Output() results: Result[]
-  @Output() currencies: Currency[]
+  @Output() results: Result[] = []
+  @Output() currencies: Currency[] = []
 
   _form: FormGroup
 
@@ -29,11 +29,14 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service
-        .login('admin', 'admin123')
-        .subscribe(() => {
-                    this.service.getCurrency().subscribe((dados: Currency[]) => this.currencies = dados)}
-                   , error => console.error(error))
+
+    if(this.currencies.length === 0) {
+      this.service
+          .login('admin', 'admin123')
+          .subscribe(() => {
+                      this.service.getCurrency().subscribe((dados: Currency[]) => this.currencies = dados)}
+                     , error => console.error(error))
+    }    
   }
 
   search(): void{
