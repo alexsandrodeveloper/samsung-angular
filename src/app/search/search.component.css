@@ -31,7 +31,7 @@ fieldset{
   border: 1px solid #000000;
 }
 
-select, datalist{
+select {
   -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
   -moz-appearance: none; /* Remove estilo padrão do FireFox */
   appearance: none; /* Remove estilo padrão do FireFox*/
@@ -40,18 +40,18 @@ select, datalist{
   margin-top: 10px;
   border-color: #ddd;
   padding-top:0px;
+  display:inline-block;
+  width:230px;
+  height:23px;
+  border: 1px solid;
+  margin-left: 1.5em;
 }
 
 #docnumber{
   width: 17em;
   margin-left: 1em;
   height: 1.5em;
-}
-
-#tpmoeda{
-  margin-left: 0.5em;
-  width:210px; 
-  height:19px;
+  border: 1px solid;
 }
 
 .bt-class-layout {

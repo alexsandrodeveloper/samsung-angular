@@ -1,5 +1,5 @@
 <div *ngIf= "results?.length > 0">
-  <table style="width:100%" class="bordered striped centered">
+  <table style="width:100%" >
     <thead>
       <tr>
         <th>Document Number</th>
@@ -12,8 +12,18 @@
         <th>Valeu  BRL</th>
       </tr>
     </thead>
-    <tbody *ngFor="let result of results">
-      <tr>
+    <tbody *ngFor="let result of results; let i = index">
+      <tr *ngIf= "i % 2 ==0" class = "custom-table-row-par">
+        <td>{{result.documentNumber}}</td>
+        <td>{{result.documentDate | date: 'dd/MM/yyyy'}}</td>
+        <td>{{result.currencyCode}}</td>
+        <td>{{result.currencyDesc}}</td>
+        <td>{{result.documentValue | currency: 'BRL' : true}}</td>
+        <td>{{result.cotacaoToCurrencyCodeUSD | currency: 'BRL' : true}}</td>
+        <td>{{result.cotacaoToCurrencyCodePEN | currency: 'BRL' : true}}</td>
+        <td>{{result.cotacaoToCurrencyCodeBRL | currency: 'BRL' : true}}</td>
+      </tr>
+      <tr *ngIf= "i % 2 ==1" class = "custom-table-row-impar">
         <td>{{result.documentNumber}}</td>
         <td>{{result.documentDate | date: 'dd/MM/yyyy'}}</td>
         <td>{{result.currencyCode}}</td>

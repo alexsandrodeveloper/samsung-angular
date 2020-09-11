@@ -3,5 +3,13 @@ table, th, td{
 }
 
 thead{
-  background-color: #DCDCDC;
+  background-color: #C0C0C0;
+}
+
+.custom-table-row-par{
+  background-color: #FFFAFA
+}
+  
+.custom-table-row-impar{
+  background-color: #DCDCDC
 }

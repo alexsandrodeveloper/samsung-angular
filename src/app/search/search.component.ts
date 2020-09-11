@@ -50,7 +50,7 @@ export class SearchComponent implements OnInit {
   }
 
   clear(): void {
-    this.results = []
+    this.results = null
   }
 
   private montarFiltro(): Filtro{

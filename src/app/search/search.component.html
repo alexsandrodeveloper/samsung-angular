@@ -6,19 +6,11 @@
     <div class="principal" [formGroup]="_form">
       <input type="input" id="docnumber"
              name="docnumber" formControlName="numeroDocumento" placeholder="Document Number">
-      <!-- <select name="tpmoeda" id="tpmoeda" formControlName="tipoMoeda" style = "display: inline; width:232px; height:23px;" >
-         <option label="Selecione.." value="" selected > </option>
-         <option *ngFor="let currency of currencies" [value]="currency.currencyCode"> {{currency.currencyDesc}}</option>
-      </select>-->
 
-      <label id="lbTpMoeda" for="tpmoeda">Selecione:</label>
-       <input type="text" list="currenies" id="tpmoeda" formControlName="tipoMoeda"/>
-       <datalist id="currenies">
-         <select name=tpmoeda>
-          <option *ngFor="let currency of currencies"
-                  [value]="currency.currencyCode"> {{currency.currencyDesc}} </option>
-          </select>
-        </datalist>
+       <select name="tpmoeda" id="tpmoeda" formControlName="tipoMoeda" >
+         <option id="default" value="#" label = "selecione..." selected> </option>
+         <option *ngFor="let currency of currencies" [value]="currency.currencyCode"> {{currency.currencyDesc}}</option>
+      </select>
 
       <label for="dinicial">Document Date</label>
       <input class="dtinput" type="date" id="dtinicial"
