@@ -31,7 +31,7 @@ fieldset{
   border: 1px solid #000000;
 }
 
-select{
+select, datalist{
   -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
   -moz-appearance: none; /* Remove estilo padrão do FireFox */
   appearance: none; /* Remove estilo padrão do FireFox*/
@@ -46,17 +46,15 @@ select{
   width: 17em;
   margin-left: 1em;
   height: 1.5em;
-  border:1px solid;
 }
 
 #tpmoeda{
-  width: 15em;
-  margin-left: 2em;
-  height: 1.2em;
-  border: 1px solid;
+  margin-left: 0.5em;
+  width:210px; 
+  height:19px;
 }
 
-#btsearch , #btclear{
+.bt-class-layout {
   width: 7em;
   margin-left: 1em;
   border-width: 2px;

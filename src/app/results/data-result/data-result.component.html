@@ -1,4 +1,4 @@
-<div>
+<div *ngIf= "results?.length > 0">
   <table style="width:100%" class="bordered striped centered">
     <thead>
       <tr>
@@ -15,18 +15,18 @@
     <tbody *ngFor="let result of results">
       <tr>
         <td>{{result.documentNumber}}</td>
-        <td>{{result.documentDate}}</td>
+        <td>{{result.documentDate | date: 'dd/MM/yyyy'}}</td>
         <td>{{result.currencyCode}}</td>
         <td>{{result.currencyDesc}}</td>
-        <td>{{result.documentValue}}</td>
-        <td>{{result.cotacaoToCurrencyCodeUSD}}</td>
-        <td>{{result.cotacaoToCurrencyCodePEN}}</td>
-        <td>{{result.cotacaoToCurrencyCodeBRL}}</td>
+        <td>{{result.documentValue | currency: 'BRL' : true}}</td>
+        <td>{{result.cotacaoToCurrencyCodeUSD | currency: 'BRL' : true}}</td>
+        <td>{{result.cotacaoToCurrencyCodePEN | currency: 'BRL' : true}}</td>
+        <td>{{result.cotacaoToCurrencyCodeBRL | currency: 'BRL' : true}}</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<div>
-     <h6> <b> <i> No Data Found! </i> </b> </h6> 
+<div *ngIf= "results?.length === 0">
+     <h6> <b> <i> <center> No Data Found! </center></i> </b> </h6> 
 </div>

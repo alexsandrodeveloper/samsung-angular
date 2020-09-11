@@ -1,21 +1,42 @@
+<div>
+  <br>
 <fieldset>
   <legend>Seach Criterios</legend>
+  <form novalidate (submit)="search()" (reset)="clear()">
+    <div class="principal" [formGroup]="_form">
+      <input type="input" id="docnumber"
+             name="docnumber" formControlName="numeroDocumento" placeholder="Document Number">
+      <!-- <select name="tpmoeda" id="tpmoeda" formControlName="tipoMoeda" style = "display: inline; width:232px; height:23px;" >
+         <option label="Selecione.." value="" selected > </option>
+         <option *ngFor="let currency of currencies" [value]="currency.currencyCode"> {{currency.currencyDesc}}</option>
+      </select>-->
 
-  <div class="principal">
-    <input type="input" id="docnumber" name="docnumber" placeholder="Document Number">
-    <select name="tpmoeda" id="tpmoeda" style = "display: inline; width:232px; height:23px;">
-      <option value="" selected> Selecione.. </option>
-      <option value="dolar">Dolar</option>
-      <option value="real">Real</option>
-      <option value="speruano">Soles Peruano</option>
-    </select>
+      <label id="lbTpMoeda" for="tpmoeda">Selecione:</label>
+       <input type="text" list="currenies" id="tpmoeda" formControlName="tipoMoeda"/>
+       <datalist id="currenies">
+         <select name=tpmoeda>
+          <option *ngFor="let currency of currencies"
+                  [value]="currency.currencyCode"> {{currency.currencyDesc}} </option>
+          </select>
+        </datalist>
+
       <label for="dinicial">Document Date</label>
-      <input class="dtinput" type="date" id="dtinicial" name="dtinicial">
+      <input class="dtinput" type="date" id="dtinicial"
+            name="dtinicial" formControlName="dataInicio">
       <label for="dtfinal"> ~ </label>
-      <input class="dtinput" type="date" id="dtfinal" name="dtfinal">
-  </div>
-  <div class="divbotoes">
-    <input id= "btsearch" type="submit" value="Seach">
-    <input id= "btclear" type="submit" value="Clear">
-  </div>
+      <input class="dtinput" type="date" id="dtfinal"
+            name="dtfinal" formControlName="dataFim">
+    </div>
+    <div class="divbotoes">
+      <button class="bt-class-layout" id='btsearch' type="submit">Search</button>
+      <button class="bt-class-layout" id='btclear' type="reset">clear</button>
+    </div>
+  </form>
 </fieldset>
+</div>
+
+<br>
+
+<div>
+  <sam-results [results] = "results"></sam-results>
+</div>

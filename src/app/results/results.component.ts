@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import {Result} from './result.model'
-import {ResultService} from './result.service'
+//import {ResultService} from './result.service'
 
 @Component({
   selector: 'sam-results',
@@ -10,11 +10,9 @@ import {ResultService} from './result.service'
 })
 export class ResultsComponent implements OnInit {
 
-  @Input() results: Result[];
+  @Input() results: Result[]
 
-  constructor(private service: ResultService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.service.results().subscribe(results => this.results = results)
-  }
+  ngOnInit(): void {}
 }
