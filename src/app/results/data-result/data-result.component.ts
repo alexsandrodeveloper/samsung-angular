@@ -9,6 +9,7 @@ import {Result} from '../result.model'
 export class DataResultComponent implements OnInit {
 
   @Input() results: Result[]
+  @Input() showResults: number
 
   constructor() { }
 

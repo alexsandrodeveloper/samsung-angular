@@ -15,8 +15,9 @@ import { ResultService } from '../results/result.service'
 })
 export class SearchComponent implements OnInit {
 
-  @Output() results: Result[] = []
+  @Output() results: Result[]
   @Output() currencies: Currency[] = []
+  @Output() showResults: number = 0
 
   _form: FormGroup
 
@@ -36,7 +37,7 @@ export class SearchComponent implements OnInit {
           .subscribe(() => {
                       this.service.getCurrency().subscribe((dados: Currency[]) => this.currencies = dados)}
                      , error => console.error(error))
-    }    
+    }
   }
 
   search(): void{
@@ -45,6 +46,7 @@ export class SearchComponent implements OnInit {
         .subscribe(() => {
                     this.service.results(this.montarFiltro()).subscribe((dados: any[]) => this.results = dados)}
                            ,error => console.error(error))
+    this.showResults = 1
     this.clearFiltro()
   }
 

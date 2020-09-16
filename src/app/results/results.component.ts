@@ -11,6 +11,7 @@ import {Result} from './result.model'
 export class ResultsComponent implements OnInit {
 
   @Input() results: Result[]
+  @Input() showResults: number
 
   constructor() { }
 

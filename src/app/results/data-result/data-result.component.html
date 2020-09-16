@@ -1,4 +1,4 @@
-<div *ngIf= "results?.length > 0">
+<div *ngIf= "showResults === 1 && results.length > 0">
   <table style="width:100%" >
     <thead>
       <tr>
@@ -37,6 +37,7 @@
   </table>
 </div>
 
-<div *ngIf= "results?.length === 0">
+<div *ngIf= "showResults === 1 && results.length <= 0">
      <h6> <b> <i> <center> No Data Found! </center></i> </b> </h6> 
 </div>
+
